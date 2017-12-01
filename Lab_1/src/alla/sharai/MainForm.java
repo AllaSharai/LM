@@ -18,7 +18,8 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
         init();
         pathLabel1.setText(path);
-
+        teaImage.setVisible(false);
+        coffeeImage.setVisible(false);
     }
 
     void init() {
@@ -28,7 +29,7 @@ public class MainForm extends javax.swing.JFrame {
         current = 0;
         summaLabel1.setText("" + sum);
         stanLabel1.setText("q" + current);
-        
+
     }
 
     private int current = 0;
@@ -72,15 +73,22 @@ public class MainForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         pathLabel1 = new javax.swing.JLabel();
         resultLabel = new javax.swing.JLabel();
+        coffeeImage = new javax.swing.JLabel();
+        teaImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(700, 400));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        zl1Button.setForeground(new java.awt.Color(255, 0, 0));
         zl1Button.setText("1 zł");
         zl1Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zl1ButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(zl1Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 31, -1, -1));
 
         zl2Button.setText("2 zł");
         zl2Button.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +96,7 @@ public class MainForm extends javax.swing.JFrame {
                 zl2ButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(zl2Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 84, -1, -1));
 
         zl5Button.setText("5 zł");
         zl5Button.addActionListener(new java.awt.event.ActionListener() {
@@ -95,8 +104,10 @@ public class MainForm extends javax.swing.JFrame {
                 zl5ButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(zl5Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 137, -1, -1));
 
         stanLabel1.setText("q0");
+        getContentPane().add(stanLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, -1, -1));
 
         kawaButton.setText("Kawa");
         kawaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +115,7 @@ public class MainForm extends javax.swing.JFrame {
                 kawaButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(kawaButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 190, -1, -1));
 
         herbataButton.setText("Herbata");
         herbataButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,92 +123,37 @@ public class MainForm extends javax.swing.JFrame {
                 herbataButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(herbataButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         summaLabel1.setText("0");
+        getContentPane().add(summaLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 31, -1));
 
         restLabel1.setText("0");
+        getContentPane().add(restLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
 
         summaLabel.setText("Summa");
+        getContentPane().add(summaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
         stanLabel.setText("Stan");
+        getContentPane().add(stanLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 53, -1));
 
         restLabel.setText("Rest");
+        getContentPane().add(restLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 53, -1));
 
         jLabel1.setText("Ścieżka");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, 30));
+        getContentPane().add(pathLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 260, 30));
 
         resultLabel.setText(" ");
+        getContentPane().add(resultLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 190, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(42, 42, 42)
-                        .addComponent(pathLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(25, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(zl2Button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(stanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(zl5Button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(restLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(kawaButton)
-                                .addGap(43, 43, 43)
-                                .addComponent(resultLabel)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(zl1Button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(summaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(herbataButton))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(restLabel1)
-                            .addComponent(stanLabel1)
-                            .addComponent(summaLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(80, 80, 80))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zl1Button)
-                    .addComponent(summaLabel1)
-                    .addComponent(summaLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zl2Button)
-                    .addComponent(stanLabel1)
-                    .addComponent(stanLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(zl5Button)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(kawaButton)
-                            .addComponent(resultLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(herbataButton))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(restLabel1)
-                        .addComponent(restLabel)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(pathLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        coffeeImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/alla/sharai/if_coffee-cup-2_430091.png"))); // NOI18N
+        coffeeImage.setText("jLabel2");
+        getContentPane().add(coffeeImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 120, 110));
+
+        teaImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/alla/sharai/if_tea_1642858.png"))); // NOI18N
+        teaImage.setText("jLabel2");
+        getContentPane().add(teaImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 130, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -221,6 +178,7 @@ public class MainForm extends javax.swing.JFrame {
             resultLabel.setText("Weź kawę");
             kawaButton.setEnabled(true);
             init();
+            coffeeImage.setVisible(true);
 
         }
     }//GEN-LAST:event_kawaButtonActionPerformed
@@ -231,6 +189,7 @@ public class MainForm extends javax.swing.JFrame {
             restLabel1.setText(" " + rest);
             resultLabel.setText("Weź Herbatę");
             init();
+            teaImage.setVisible(true);
 
         }
     }//GEN-LAST:event_herbataButtonActionPerformed
@@ -241,6 +200,8 @@ public class MainForm extends javax.swing.JFrame {
             rest = 0;
             restLabel1.setText("");
             resultLabel.setText("");
+            teaImage.setVisible(false);
+            coffeeImage.setVisible(false);
         }
         current = table[current][stateIndex];
         sum = sum + val;
@@ -295,6 +256,7 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel coffeeImage;
     private javax.swing.JButton herbataButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton kawaButton;
@@ -306,6 +268,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JLabel stanLabel1;
     private javax.swing.JLabel summaLabel;
     private javax.swing.JLabel summaLabel1;
+    private javax.swing.JLabel teaImage;
     private javax.swing.JButton zl1Button;
     private javax.swing.JButton zl2Button;
     private javax.swing.JButton zl5Button;
