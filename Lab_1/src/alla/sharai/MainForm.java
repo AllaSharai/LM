@@ -34,7 +34,6 @@ public class MainForm extends javax.swing.JFrame {
 
     private int current = 0;
     private int sum = 0;
-    private int rest = 0;
     private String path = "q0";
 
     private int[][] table
@@ -81,7 +80,7 @@ public class MainForm extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(700, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        zl1Button.setForeground(new java.awt.Color(255, 0, 0));
+        zl1Button.setForeground(java.awt.Color.black);
         zl1Button.setText("1 zł");
         zl1Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +172,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void kawaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kawaButtonActionPerformed
         if (sum >= 7) {
-            rest = sum - 7;
+            int rest = sum - 7;
             restLabel1.setText(" " + rest);
             resultLabel.setText("Weź kawę");
             kawaButton.setEnabled(true);
@@ -185,7 +184,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void herbataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_herbataButtonActionPerformed
         if (sum >= 5) {
-            rest = sum - 5;
+            int rest = sum - 5;
             restLabel1.setText(" " + rest);
             resultLabel.setText("Weź Herbatę");
             init();
@@ -197,7 +196,7 @@ public class MainForm extends javax.swing.JFrame {
     void addCoin(int val, int stateIndex) {
         if (current == 0) {
             path = "q0";
-            rest = 0;
+            int rest = 0;
             restLabel1.setText("");
             resultLabel.setText("");
             teaImage.setVisible(false);
