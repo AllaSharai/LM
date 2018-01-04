@@ -30,11 +30,11 @@ public class MainForm extends javax.swing.JFrame {
 
     String[][] table
             = {
-                {"-,1,-", "-,2,-", "-,2,-", "-,2,-"}, //q0
+                {"-,0,-", "3,1,L", "-7,2,L", "-7,2,L"}, //q0
                 {"-,1,-", "-,1,-", "-,1,-", "-,1,-"}, //q1
-                {"-,1,-", "3,1,-", "-7,3,L", "-7,3,L"},//q2
-                {"1,1,-", "-,4,-", "-,4,-", "-,4,-"}, //q3
-                {"-,1,-", "1,1,-", "1,1,-", "-9,3,L"} //q4
+                {"1,1,-", "-,3,-", "-,3,-", "-,3,-"},//q2
+                {"-,3,-", "1,1,-", "1,1,-", "-9,2,L"}, //q3
+                
             };
 
     public MainForm() {
@@ -224,7 +224,8 @@ public class MainForm extends javax.swing.JFrame {
         if (actions[2].equals("L")) {
             position--;
             if (position < 0) {
-                numberChars.add(0, '0');
+                if (currentState != 1)
+                    numberChars.add(0, '0');
                 position = 0;
             }
         }
