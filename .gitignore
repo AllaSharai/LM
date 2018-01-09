@@ -7,3 +7,6 @@ Lab_1/build.xml
 *.idea
 /Lab_3/nbproject/private/
 /Lab_3/build/
+/Lab_4/nbproject/private/
+/Lab_4/build/
+/Lab_4/dist/
