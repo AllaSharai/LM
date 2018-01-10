@@ -27,6 +27,7 @@ public class MainGUI extends javax.swing.JFrame {
         operators.add("-");
         operators.add("*");
         operators.add("/");
+        operators.add("^");
     }
 
     /**
@@ -130,7 +131,6 @@ public class MainGUI extends javax.swing.JFrame {
 
         for (int i = 0; i < tokens.length; i++) {
             String token = tokens[i];
-
             if (operators.contains(token)) {
                 if (!stack.isEmpty() && stack.size() < 2) {
                     resultLabel.setText("Error");
@@ -154,6 +154,10 @@ public class MainGUI extends javax.swing.JFrame {
                     case "/":
                         result = operand1 / operand2;
                         break;
+                    case "^":
+                        result = Math.pow(operand1,operand2);
+                        break;
+                           
                     default:
                         throw new IllegalArgumentException();
                 }
@@ -172,6 +176,8 @@ public class MainGUI extends javax.swing.JFrame {
 
     private void cButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cButtonActionPerformed
         expretionField.setText("");
+        resultLabel.setText("");
+      
     }//GEN-LAST:event_cButtonActionPerformed
 
     /**
